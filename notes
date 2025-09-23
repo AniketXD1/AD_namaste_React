@@ -1,0 +1,178 @@
+# frist episode #E1
+
+<!-- <script>
+      in this part we trying do is craeting html elment h1 and adding innerHTML text
+      through javascript and assecing root id and appendchild heading
+
+We are creating an <h1> element in JavaScript, setting its inner text as "Hello World from JavaScript", then selecting the element with the id "root" from the HTML, and finally adding the <h1> element inside it using appendChild().
+
+      const heading = document.createElement("h1");
+      heading.innerHTML = "hello world from javascript";
+      const root = document.getElementById("root");
+      root.appendChild(heading);
+    </script> -->
+
+#CDN Link
+
+<!--
+<script
+  crossorigin
+  src="https://unpkg.com/react@18/umd/react.development.js"
+></script>
+<script
+  crossorigin
+  src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+></script> -->
+
+#React basic how to create h1 tag in react
+
+<!-- <script>
+
+React.createElement → creates a React element (h1 with text).
+
+ReactDOM.createRoot → selects the HTML element with id "root" as the container.
+
+root.render → displays the React element inside that container.
+
+👉 In simple words: React creates an element, finds the root box, and shows the element inside the page.
+
+
+  const heading = React.createElement("h1", {}, "hello world from java script");
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(heading);
+
+  root → your variable → ✅ can rename.
+
+createRoot → React’s built-in function → ❌ cannot rename.
+
+👉 You can change the variable name, but the React function name must stay the same.
+</script> -->
+
+#Nested Element
+
+<!-- <div id="parent">
+  <div id = "child">
+    <h1>I am h1 tag</h1>
+    <h2>I am h2 tag </h2>
+  </div>
+</div>
+how to create slibling ?
+1. we have to pass one child and
+2. convert into array pass to second child and create array of childern
+
+ReactElement(object) => HTML (browser understands)
+
+
+const parent = React.createElement(
+  "div",
+  { id: "parent" },
+  React.createElement("div", { id: "child" }, [
+    React.createElement("h1", {}, "I am h1 tag"),
+    React.createElement("h2", {}, "I am h2 tag"),
+  ])
+);
+console.log(parent);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(parent);
+
+this is core of react
+
+we use this method last and we can use jsx for all code react
+
+
+
+how to create parent childern
+
+const parent = React.createElement("div", { id: "parent" }, [
+  React.createElement("div", { id: "child1" }, [
+    React.createElement("h1", {}, "I am h1 tag"),
+    React.createElement("h2", {}, "I am h2 tag"),
+  ]),
+  React.createElement("div", { id: "child2" }, [
+    React.createElement("h1", {}, "I am h1 tag"),
+    React.createElement("h2", {}, "I am h2 tag"),
+  ]),
+]);
+
+we have convert into array for that
+-->
+
+# second episode notes #NPM
+
+<!--
+
+npm is everything but not node package manager.
+
+In official website there is no place where it has writter that npm is node package manager.
+
+npm does not have full form.
+
+what is npm?
+ans: basically npm manages packages.
+NPM basically is a repisitory and standard for all the packages.
+It's biggest package manager.
+All the package are hosted there. -->
+
+<!-- * Configuring the Project:
+
+ npm init
+
+ It creates a package.json file.
+ Now to install parcel we will do:
+
+
+ npm install -D parcel
+
+
+ Now we will get a package-lock.json file. -->
+
+# Note
+
+<!-- note: the most important package in our project is a bundler. -->
+
+# Type of dependencies
+
+<!-- There are two type of packages or two type of dependencies that we can instll.
+
+ 1.dev dependencies.
+ 2.normal dependencies. -->
+
+- package.json:
+<!--
+ Package.json file is a configuration for NPM. Whatever
+packages our project needs, we install those packages using
+npm install <packageName>.
+
+  Once package installation is complete, their versions and
+configuration related information is stored as dependencies
+inside package.json file. -->
+
+- package-lock.json:
+
+<!-- Package-lock.json locks the exact version of packages being
+used in the project. -->
+
+Q . What is difference between package.json and package.lock.json?
+
+<!-- In package. json we have information about generic version
+of installed packages whereas in package.lock.json we have
+information about the specific or exact version of
+installed packages. -->
+
+# .gitignore
+
+<!-- git ignore help with some file you don't want to put into github.
+
+example:
+
+/node_modules
+
+whatever you can regenerate don't put on git.
+
+we can have essential things only lilk
+
+1.package.json
+2.package-lock.json
+
+
+ -->

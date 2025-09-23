@@ -1,0 +1,23 @@
+{
+  "name": "ad_namaste_react",
+  "version": "1.0.0",
+  "description": "This is Namaste React by Aniket",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AniketXD1/AD_namaste_React.git"
+  },
+  "keywords": [],
+  "author": "Aniket Deshpande",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AniketXD1/AD_namaste_React/issues"
+  },
+  "homepage": "https://github.com/AniketXD1/AD_namaste_React#readme",
+  "devDependencies": {
+    "parcel": "^2.16.0"
+  }
+}

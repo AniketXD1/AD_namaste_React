@@ -94,5 +94,3 @@ const parent = React.createElement("div", { id: "parent" }, [
 
 we have convert into array for that
 -->
-
-#JSX
