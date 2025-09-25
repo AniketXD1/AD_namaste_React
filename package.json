@@ -2,7 +2,6 @@
   "name": "ad_namaste_react",
   "version": "1.0.0",
   "description": "This is Namaste React by Aniket",
-  "main": "App.js",
   "scripts": {
     "test": "jest"
   },
@@ -19,5 +18,9 @@
   "homepage": "https://github.com/AniketXD1/AD_namaste_React#readme",
   "devDependencies": {
     "parcel": "^2.16.0"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   }
 }

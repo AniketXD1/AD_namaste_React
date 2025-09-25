@@ -176,3 +176,70 @@ we can have essential things only lilk
 
 
  -->
+
+# npx parcel index.html
+
+    Just like we have similarly to npm we have something known as npx.
+
+    npm that just calling the command.
+
+    npx that mean exeuting  a package.
+
+# CDN link is not good way to get react and react-dom
+
+  <!--
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script> -->
+
+# How to install react and react-dom as package.
+
+# npm install react
+
+# npm install react-dom
+
+# npm i react-dom ( i = is short form of install)
+
+# Q. how to ues reacr and react-dom in my code?
+
+we have to ues keyword known as import
+
+# old version
+
+import React from "react";
+import ReactDOM from "react-dom";
+
+# new version
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+# comman error browser scripts can not have import and export.
+
+# Error
+
+    <script  src="/App.js"></script>
+
+# Fix error
+
+    <script type="module" src="/App.js"></script>
+
+# Q. why your app is so fast ?
+
+# how to create prod build
+
+npx parcel build index.html
+
+# gitignore
+
+/dist
+.parcel-cache
+
+# how to make our app older version of browser
+
+E2:1:59:30
