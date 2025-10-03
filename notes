@@ -24,7 +24,7 @@ We are creating an <h1> element in JavaScript, setting its inner text as "Hello 
   src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
 ></script> -->
 
-#React basic how to create h1 tag in react
+# React basic how to create h1 tag in react
 
 <!-- <script>
 
@@ -48,7 +48,7 @@ createRoot → React’s built-in function → ❌ cannot rename.
 👉 You can change the variable name, but the React function name must stay the same.
 </script> -->
 
-#Nested Element
+# Nested Element
 
 <!-- <div id="parent">
   <div id = "child">
@@ -243,3 +243,106 @@ npx parcel build index.html
 # how to make our app older version of browser
 
 E2:1:59:30
+
+# three episode notes #NPM
+
+# Laying the Foundation!
+
+# Q . What is another way of starting the build of the project? or
+
+# what is script in react in package.json ?
+
+In React, scripts are shortcut commands that make your life easier. Instead of typing long commands, you can just run:
+
+"scripts": {
+"start": "parcel index.html",
+"build": "parcel build index.html",
+},
+
+# how to run commands ?
+
+npm run start ---> another way to write npm start --->this work only for start not for build
+
+npm run build ---> For Production Build.
+
+# React.createElement => object => HTMLElement (render)
+
+render----> it will replace everthing not append.
+
+✅ Simple way to remember:
+
+React.createElement → object (description)
+
+render() → converts object → HTML and replaces everything in container
+
+# JSX
+
+Q What is JSX?
+JSX is HTML-like or XML-like syntax. JSX stands for JavaScript
+XML. It's a syntax extension for JavaScript
+
+It is not a part of React. React apps can be built even
+without JSX but the code will become very hard to read.
+It is not HTML inside JavaScript.
+JavaScript engine cannot understand JSX as it only
+understands ECMAScript
+
+# Note
+
+You are writting code first for humans then for machines.
+
+We do not use React.createElement form now on then we use from on is JSX
+
+# Introducing Babel
+
+# Q Is JSX a valid JavaScript?
+
+The answer is yes and no.
+
+JSX is not a valid Javascript syntax as it’s not pure HTML or
+pure JavaScript for a browser to understand. JS does not have
+built-in JSX. The JS engine does not understand JSX because
+the JS engine understands ECMAScript or ES6+ code
+
+# Q If the browser can’t understand JSX how is it still working?
+
+This is because of Parcel because “Parcel is a Beast”.
+Before the code gets to JS Engine it is sent to Parcel and
+Transpiled there. Then after transpilation, the browser gets the
+code that it can understand.
+Transpilation
+⇒
+Converting the code in such a format that the
+browsers can understand.
+Parcel is like a manager who gives the responsibility of
+transpilation to a package called Babel.
+Babel is a package that is a compiler/transpiler of JavaScript
+that is already present inside ‘node-modules’. It takes JSX and
+converts it into the code that browsers understand, as soon as
+we write it and save the file. It is not created by Facebook.
+Learn more about Babel on
+babeljs.io
+JSX (transpiled by Babel)
+⇒
+React.createElement
+⇒
+ReactElement
+⇒
+JS Object
+⇒
+HTML Element(render)
+
+Q ) What is the difference between HTML and JSX?
+JSX is not HTML. It’s HTML-like syntax.
+HTML uses ‘class’ property whereas JSX uses ‘className’
+property
+HTML can use hypens in property names whereas JSX uses
+camelCase syntax.
+
+# Note
+
+If you have to give attributes to JSX.
+You have to use camel case.
+EX:
+className
+tabIndex
