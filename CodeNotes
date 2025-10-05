@@ -1,5 +1,6 @@
-#E1
-<!-- <script>
+//#E1;
+{
+  /*<script>
       in this part we trying do is craeting html elment h1 and adding innerHTML text 
       through javascript and assecing root id and appendchild heading
       
@@ -9,7 +10,7 @@ We are creating an <h1> element in JavaScript, setting its inner text as "Hello 
       heading.innerHTML = "hello world from javascript";
       const root = document.getElementById("root");
       root.appendChild(heading);
-    </script> -->
+    </script> 
 
 #CDN Link
 <!-- 
@@ -276,5 +277,3 @@ any JS expression
 
 // const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(<HeadingComponent2 />);
-
---->
