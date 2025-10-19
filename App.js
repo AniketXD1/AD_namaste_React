@@ -1,176 +1,267 @@
-// import React from "react";
-// import ReactDOM from "react-dom/client";
+/**
+ * 
+ //! we using in this code hard-coded data 
+ * Header
+ * - Logo
+ * - Nav Items
+ *Body
+ * - Search
+ * - RestaurantContainer
+ *  - RestaurantCard
+ *      -Img
+ *      -Name of restaurant, Star Rating, cuisine, delery time
+ *Footer
+ * - Copyright
+ * - Links
+ * - Address
+ * - Contact
+ *
+ * we will keps this as as reference
+ */
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-// In this code show error that key error solution is below
-// const parent = React.createElement("div", { id: "parent" }, [
-//   React.createElement("div", { id: "child1" }, [
-//     React.createElement("h1", {}, "I am h1 tag"),
-//     React.createElement("h2", {}, "I am h2 tag"),
-//   ]),
-//   React.createElement("div", { id: "child2" }, [
-//     React.createElement("h1", {}, "I am h1 tag"),
-//     React.createElement("h2", {}, "I am h2 tag"),
-//   ]),
-// ]);
-//  console.log(parent);
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(parent);
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="logo-container">
+        <img
+          className="logo"
+          src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png?nwm=1&nws=1&industry=food&sf=&txt_keyword=All"
+        />
+      </div>
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
 
-//*Error: Each child in a list should have a unique "key" prop.
+const RestaurantCard = (props) => {
+  // console.log(props);
+  const { resData } = props;
+  return (
+    <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
+      <img
+        className="res-logo"
+        alt="res-logo"
+        // i dont have coludinary link
+        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/FOOD_CATALOG/IMAGES/CMS/2024/4/9/5f74ca6a-2a92-4810-a6a0-ace38aa6cc31_886af383-53f2-4ee0-8393-10ec944f21c7.JPG"
+      />
+      <h3>{resData.name}</h3>
+      <h4>{resData.cuisines.join(",")} </h4>
+      <h4>{resData.avgRating}</h4>
+      <h4>{resData.costForTwo}</h4>
+      <h4>{resData.sla.deliveryTime}minutes</h4>
+    </div>
+  );
+};
 
-// import React from "react";
-// import ReactDOM from "react-dom/client";
+const resList = [
+  {
+    id: "151656",
+    name: "Dev International",
+    cloudinaryImageId: "enj3srsnhbltbom2ovvh",
+    locality: "khajri road",
+    areaName: "Mohan Nagar",
+    costForTwo: "₹100 for two",
+    cuisines: ["Chinese", "Fast Food", "Beverages"],
+    avgRating: 4.2,
+    parentId: "71556",
+    avgRatingString: "4.2",
+    totalRatingsString: "590",
+    sla: {
+      deliveryTime: 55,
+      lastMileTravel: 13.6,
+      serviceability: "SERVICEABLE",
+      slaString: "55-65 mins",
+      lastMileTravelString: "13.6 km",
+      iconType: "ICON_TYPE_EMPTY",
+    },
+    availability: {
+      nextCloseTime: "2025-10-13 22:30:00",
+      opened: true,
+    },
+    badges: {},
+    isOpen: true,
+    type: "F",
+    badgesV2: {
+      entityBadges: {
+        imageBased: {},
+        textBased: {},
+        textExtendedBadges: {},
+      },
+    },
+    aggregatedDiscountInfoV3: {
+      header: "₹100 OFF",
+      subHeader: "ABOVE ₹299",
+      discountTag: "FLAT DEAL",
+    },
+    differentiatedUi: {
+      displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+      differentiatedUiMediaDetails: {
+        lottie: {},
+        video: {},
+      },
+    },
+    reviewsSummary: {},
+    displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    restaurantOfferPresentationInfo: {},
+    externalRatings: {
+      aggregatedRating: {
+        rating: "--",
+      },
+    },
+    ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
+  },
+  {
+    id: "151657",
+    name: "Fast Food",
+    cloudinaryImageId: "enj3srsnhbltbom2ovvh",
+    locality: "khajri road",
+    areaName: "Mohan Nagar",
+    costForTwo: "₹100 for two",
+    cuisines: ["Chinese", "Fast Food", "Beverages"],
+    avgRating: 4.2,
+    parentId: "71556",
+    avgRatingString: "4.2",
+    totalRatingsString: "590",
+    sla: {
+      deliveryTime: 55,
+      lastMileTravel: 13.6,
+      serviceability: "SERVICEABLE",
+      slaString: "55-65 mins",
+      lastMileTravelString: "13.6 km",
+      iconType: "ICON_TYPE_EMPTY",
+    },
+    availability: {
+      nextCloseTime: "2025-10-13 22:30:00",
+      opened: true,
+    },
+    badges: {},
+    isOpen: true,
+    type: "F",
+    badgesV2: {
+      entityBadges: {
+        imageBased: {},
+        textBased: {},
+        textExtendedBadges: {},
+      },
+    },
+    aggregatedDiscountInfoV3: {
+      header: "₹100 OFF",
+      subHeader: "ABOVE ₹299",
+      discountTag: "FLAT DEAL",
+    },
+    differentiatedUi: {
+      displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+      differentiatedUiMediaDetails: {
+        lottie: {},
+        video: {},
+      },
+    },
+    reviewsSummary: {},
+    displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    restaurantOfferPresentationInfo: {},
+    externalRatings: {
+      aggregatedRating: {
+        rating: "--",
+      },
+    },
+    ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
+  },
+  {
+    id: "151658",
+    name: "Dev Beverages ",
+    cloudinaryImageId: "enj3srsnhbltbom2ovvh",
+    locality: "khajri road",
+    areaName: "Mohan Nagar",
+    costForTwo: "₹100 for two",
+    cuisines: ["Chinese", "Fast Food", "Beverages"],
+    avgRating: 4.2,
+    parentId: "71556",
+    avgRatingString: "4.2",
+    totalRatingsString: "590",
+    sla: {
+      deliveryTime: 55,
+      lastMileTravel: 13.6,
+      serviceability: "SERVICEABLE",
+      slaString: "55-65 mins",
+      lastMileTravelString: "13.6 km",
+      iconType: "ICON_TYPE_EMPTY",
+    },
+    availability: {
+      nextCloseTime: "2025-10-13 22:30:00",
+      opened: true,
+    },
+    badges: {},
+    isOpen: true,
+    type: "F",
+    badgesV2: {
+      entityBadges: {
+        imageBased: {},
+        textBased: {},
+        textExtendedBadges: {},
+      },
+    },
+    aggregatedDiscountInfoV3: {
+      header: "₹100 OFF",
+      subHeader: "ABOVE ₹299",
+      discountTag: "FLAT DEAL",
+    },
+    differentiatedUi: {
+      displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+      differentiatedUiMediaDetails: {
+        lottie: {},
+        video: {},
+      },
+    },
+    reviewsSummary: {},
+    displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    restaurantOfferPresentationInfo: {},
+    externalRatings: {
+      aggregatedRating: {
+        rating: "--",
+      },
+    },
+    ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
+  },
+];
+// ! Not using keys (not acceptable) <<<<< index as ket <<<<< unique id (best practice)
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="search">Search</div>
+      <div className="res-container">
+        {/* <RestaurantCard
+          // passing props to the component
+          // resName="meghana food"
+          // cuisine="Biryani, North Indian, Asian"
+          resData={resList[0]}
+          //resdata is props and resobj object passing
+        />
+        {/* <RestaurantCard resName="kfc" cuisine="burger" /> */}
 
-// const parent = React.createElement("div", { id: "parent" }, [
-//   React.createElement("div", { id: "child1", key: "child1" }, [
-//     React.createElement("h1", { key: "h1-1" }, "Hii i am leraning react"),
-//     React.createElement("h2", { key: "h2-1" }, "I am h2 tag"),
-//   ]),
-//   React.createElement("div", { id: "child2", key: "child2" }, [
-//     React.createElement("h1", { key: "h1-2" }, "I am h1 tag"),
-//     React.createElement("h2", { key: "h2-2" }, "I am h2 tag"),
-//   ]),
-// ]);
+        {resList.map((restaurant) => (
+          <RestaurantCard key={restaurant.id} resData={restaurant} />
+        ))}
+      </div>
+    </div>
+  );
+};
+const AppLayout = () => {
+  return (
+    <div className="app">
+      <Header />
+      <Body />
+    </div>
+  );
+};
 
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(parent);
-
-// import React from "react";
-// import ReactDOM from "react-dom/client";
-
-// React.createElement ==> ReactElement -JS Object ==> HTMLElement(render)
-
-// This is core react
-
-// const heading = React.createElement(
-//   "h1",
-//   { id: "heading" },
-//   "Namaste React 🚀"
-// );
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(heading);
-
-//*JSX - is not HTML in JS
-//* JSX - HTML-like or XML-like syntax
-
-// import React from "react";
-// import ReactDOM from "react-dom/client";
-
-//* JSX (transpiled before it reaches the JS ) - Parcel - Babel
-
-//* JSX ==>Babel transpiles it to React.createElement ==> ReactElement -JS Object ==> HTMLElement(render)
-
-// const jsxHeading = (
-//   <h1 id="heading" className="root">
-//     Namaste react using JSX 🚀
-//   </h1>
-// );
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(jsxHeading);
-
-// import React from "react";
-// import ReactDOM from "react-dom/client";
-
-// * React Element
-// This is a normal react element
-// const jsxHeading = (
-//   <h1 id="heading" className="root">
-//     Namaste react using JSX 🚀
-//   </h1>
-// );
-
-// * React Component
-
-// Class Based Component - Old
-// Functional Component - New
-
-// * React Functional Component
-
-//* syntax type function way write
-
-//* 1
-
-// const HeadingComponent = () => {
-//   return <h1>Namaste React Functional Component</h1>;
-// }; // both are same
-
-//* 2
-// This is a functional component
-// const HeadingComponent2 = () => (
-//   <div id="container">
-//     <h1 className="heading">Namaste React Functional Component</h1>
-//   </div>
-// ); // both are same
-
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-//!root.render(HeadingComponent2); we can not render like this
-//!root.render(jsxHeading); We render react element not functional component
-
-//! how we render  functional component ?
-
-//! all the component render like this
-
-// root.render(<HeadingComponent2 />); //this babel understand
-
-//! let pay with code Q.suppose we have two  component in our code  ?
-// import React from "react";
-// import ReactDOM from "react-dom/client";
-// const Title = () => (
-//   <h1 id="heading" className="root">
-//     Namaste react using JSX 🚀
-//   </h1>
-// );
-//! this is a component composition
-
-// const HeadingComponent2 = () => (
-//   <div id="container">
-//     <Title /> another way to write this
-//    <Title></Title>
-//     {Title()}
-// these three things are same thing
-//  you can write any number time
-//     <h1 className="heading">Namaste React Functional Component</h1>
-//   </div>
-// );
-
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(<HeadingComponent2 />);
-
-//! IMP
-
-//! What if I have put an element inside componenet ?
-// import React from "react";
-// import ReactDOM from "react-dom/client";
-
-//! Q. How do you put a react element inside a react element ?
-//! This is react element
-
-// const elem = <span>react element</span>;
-
-//! This is react element
-// const title = (
-//   <h1 id="heading" className="root">
-//     {elem}
-//     Namaste react using JSX 🚀
-//   </h1>
-// );
-//! This is functional component
-
-// const HeadingComponent2 = () => (
-//   <div id="container">
-//     {title}
-{
-  /* IMP super power of JSX ----------------- In React, { } (curly braces) are super important!
-They allow you to write JavaScript inside JSX.
-You can write any javascript insideit.
-and,
-any JS expression
-
-*/
-}
-//     <h1 className="heading">Namaste React Functional Component</h1>
-//   </div>
-// );
-
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(<HeadingComponent2 />);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<AppLayout />);

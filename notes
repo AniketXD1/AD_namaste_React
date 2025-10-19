@@ -97,7 +97,9 @@ const parent = React.createElement("div", { id: "parent" }, [
 we have convert into array for that
 -->
 
-# second episode notes #NPM
+# -----------------------------------------------------------------------------------------
+
+# second episode 2 notes #NPM
 
 <!--
 
@@ -504,3 +506,192 @@ your browser, so it’s not recommended to do so
 3.  Makes code simple and elegant
 4.  Show more useful errors and warnings
 5.  JSX prevents code injections (attacks)
+
+# -----------------------------------------------------------------------------------------
+
+# Four episode #E4
+
+# Talk is Cheap, Show me the Code!
+
+- In this episode, we will start actual coding by starting a new
+  project. Our app is going to a Food Ordering App.
+
+# Planning for the UI
+
+Before we start coding, plan things out. Planning will make
+things easier to understand. We should know exactly what to
+build:
+
+- Name the App
+- UI Structure
+
+# Header
+
+- Logo
+- Nav Items
+
+# Body
+
+- Search
+- Restaurant Container
+  - Restaurant Card
+    - Dish Name
+    - Image
+    - Restaurant Name
+    - Rating
+    - Cuisines
+    - Time to Deliver
+
+# Footer
+
+- Copyright
+- Links
+- Address
+- Contact
+
+# Let’s start coding!
+
+- so we have done one level of planning of our app.
+
+- Keep that as a reference and start coding the app.
+
+- You have to build your code modular beacuse,
+
+- that your code are reoeating.
+
+- we build separeate component for it.
+
+- why ? whenever we can reused component.
+
+- So always create a new component function.
+
+# Main components = AppLayout
+
+const AppLayout = () => {
+return (
+
+ <div className="app">
+ <Header/>
+ <Body/>
+ </div>
+
+)
+}
+
+# Header Component
+
+const Header = () => {
+return(
+
+ <div className="header">
+ <div className="logo-container">
+ <img className="logo" src="url" />
+ </div>
+ <div className="nav-items">
+ <ul>
+ <li>Home</li>
+ <li>About Us</li>
+ <li>Contact Us</li>
+ <li>Cart</li>
+ </ul>
+ </div>
+ </div>
+ )
+ }
+
+# Inline Styling
+
+Writing the CSS along with the element in the same file. It is
+not recommended to use inline styling. So you should avoid
+writing it.
+
+ <div 
+className="red-card" 
+style={{ backgroundColor: "#f0f0f0" }}
+ >
+<h3> Meghana Foods </h3>
+ </div>
+- In ‘style={{ backgroundColor: "#f0f0f0" }}’, first bracket is to 
+tell that whatever is coming next will be JavaScript and the 
+second bracket is for JavaScript object
+
+- or you can store the CSS in a variable and then use it
+
+const styleCard = { backgroundColor: "#f0f0f0" };
+
+ <div 
+className="red-card" 
+style={styleCard}
+ >
+ <h3> Meghana Foods </h3>
+ </div>
+
+# Introducing Props My Notes.
+
+# (Q). How will we make my card dynamic?
+
+# (Q). What if I have to create a dynamic card?
+
+# ans : --->
+
+- We have to use props.
+
+- Props is a short from for Properties.
+
+- Properties is something which you can pass to the component.
+
+- Props are just normal javascript argument to a function.
+
+- Props are a way to pass data from one component to another component.
+
+- usually from a parent component to child component.
+
+- passing a props to a component is just like passing an argument to a function.
+
+- when you have pass a dynamically data to a component you have pass as props.
+
+# note:-----> Good at this concept I.M.P
+
+- important way to pass data inside app
+
+# note:-----> how does data come from back-end into fornt-end -----> Json.
+
+# Introducing Props lecture Notes.
+
+Short form for properties. To dynamically send data to a
+component we use props. Passing a prop to a function is like
+passing an argument to a function.
+
+- Passing Props to a Component
+
+- Example,
+
+  <RestaurantCard
+   resName="Meghana Foods"
+   cuisine="Biryani, North Indian"
+  />
+
+‘resName’ and ‘cuisine’ a props and this is prop passing to a
+component.
+
+- Receiving props in the Component
+  Props will be wrapped and send in Javascript object
+
+- Example,
+
+  const RestaurantCard = (props) => {
+  return(
+  <div>{props.resName}</div>
+  )
+  }
+
+- Destructuring Props
+
+- Example,
+  const RestaurantCard = ({resName, cuisine}) => {
+  return(
+  <div>{resName}</div>
+  )
+  }
+
+# Config Driven UI.
