@@ -694,4 +694,206 @@ component.
   )
   }
 
-# Config Driven UI.
+  # very IMP topic
+
+# Config Driven UI. ---> Latest Practice every company follows now.
+
+# My Notes
+
+- let me explain you a very core concept which is used in industry.
+
+- That is config driven UI.
+
+- our website is driven by data this is knwon as config driven UI.
+
+- Config driven UI means building your user interface (UI) using configration data
+  (Json or object) and we do not want use hard-code data UI element.
+
+- it allow you to control what appears on the screen :---> text, buttons, inputs,
+  layout - all form a config file.
+
+- without changing the code itself.
+
+- Easier to update or modify UI.
+
+- Help non-developer.
+
+# Config Driven UI. ---> Latest Practice every company follows now.
+
+# My lecture
+
+- It is a user Interface that is built and configured using a
+  declaration configuration file or data structure, rather than
+  being hardcoded.
+- Config is the data coming from the api which keeps on changing
+  according to different factors like user, location, etc.
+
+# -----------> Note: You Should have this knowledge
+
+- API
+
+- Data
+
+- UI (Is powered by data )
+
+- more detail : >>>>>E4:===>1:23:05
+
+# Array jion in JS IMP (H.W)
+
+# my note
+
+- IN javascript the jion (",") if do this it will come comma separated.
+
+- IN javascript the jion (",") method is used with array to combine all element into
+  a single string
+
+- separating them with a comma(,) or any separator you can specify.
+
+# lecture notes
+
+- To add something in the elements of array
+  Example, Adding “,” after every value
+  resData.data.cuisine.join(", ")
+
+# (Q.)what is cloudinary
+
+1.  when you build a large scale application you put all your image on the cdn
+
+    cloudinary.com is a cdn
+
+2.  cloudinary is a cloud based media management platform that helps developers and
+    business store manage opyimize and deliver images and videos on the web and
+    mobile apps.
+
+# Good Practices my notes
+
+- when we build a production ready app you have to write reusable component.
+
+- what we did just now ,
+
+- we created a reusable components.
+
+- we able to pass dynamic data through props.
+
+- we should know the best practice of writing our code.
+
+- good way ......rewach 1:46:25
+
+# lecture note
+
+# Good Practices
+
+- Destructuring props
+- Optional Chaining
+- Example,
+
+- const {name, avgRating, cuisine} = resData?.data;
+
+- Repeating ourselves (repeating a piece of code again and again)
+  Dynamic Component listing using JS map() function to loop over
+  an array and pass the data to component once instead of hard
+  coding the same component with different props values
+
+  Avoid ❌
+
+  <RestaurantCard
+     resName="Meghana Foods"
+    />
+  <RestaurantCard
+     resName="KFC"
+    />
+  <RestaurantCard
+     resName="McDonald's"
+    />
+  <RestaurantCard
+     resName="Dominos"
+    />
+  Follow
+  ✅
+  const resList = [
+  {
+  resName: "Meghana Foods"
+  },
+  {
+  resName: "KFC"
+  },
+  {
+  resName: "McDonald's"
+  },
+  {
+  resName: "Dominos"
+  }
+  ]
+  const Body = () => {
+  return(
+    <div>
+    {resList.map((restaurant) => (
+
+     <RestaurantCard resData={restaurant} />
+  ))}
+  </div>
+  )
+  }
+
+  # note---------> good way use map filter reduce
+
+# Unique Key id while using map
+
+# lecture note
+
+- Each item in the list must be uniquely identified
+
+- Why?
+  When we have components at same level and if a new component
+  comes on the first without ID, DOM is going to re-render all the
+  components again. As DOM can’t identify where to place it.
+
+  But if we give each of them a unique ID then react knows where
+  to put that component according to the ID. It is a good
+  optimization and performance thing.
+
+- Note Never use index as keys in map. It is not recommended.
+
+  const Body = () => {
+  return(
+  <div>
+  {resList.map((restaurant) => (
+  <RestaurantCard key={restaurant.id} resData={restaurant} /
+  ))}
+  </div>
+  )
+  }
+
+# My notes
+
+- what does it mean to have a unoque key property ?
+
+- each of this item should have a key.
+
+- you are looping on to anything any list you have to give a key.
+
+- key is a reserved word.
+
+# Key is a important never forget.
+
+# Never use indexs as the keys.
+
+- optional chaning look more detail - basic knowlaged
+
+- defination-----> optionl chaining means safely accessing a property of an object without
+  causing an error if that property does not exist.
+
+- best practice is to use functional programming to use map filter reduce.
+
+- note: really good at map filter and reduce ,
+  will we use map filter and reduce lot.
+
+  - always give key over here
+
+  - some people also use indexs as keys.
+
+  - react itself says that never use indexs as the key.
+
+  - we don't recommend using indexs for keys if the order of items may change.
+
+# -----------------------------------------------------------------------------------------
